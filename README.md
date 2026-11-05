@@ -10,6 +10,7 @@ Dự án xây dựng pipeline máy học phân loại bình luận sản phẩm 
 nlp-n2-ptit/
 ├── data/
 │   ├── raw/                                        # Dữ liệu gốc
+│   │   ├── commentdienmayxanh.csv                  # Đánh giá nguồn từ Điện Máy Xanh
 │   │   ├── reviews_spam_ham_chuan.csv
 │   │   └── reviews_spam_ham_filtered_augmented.csv
 │   └── processed/                                  # Dữ liệu sau tiền xử lý
@@ -39,6 +40,9 @@ nlp-n2-ptit/
 │   ├── <model>_confusion_matrix.png               # Ma trận nhầm lẫn trực quan hóa
 │   └── <model>_errors.csv                          # Danh sách các câu phân loại sai để phân tích lỗi
 ├── main.py
+├── data_collection/                                # Mã thu thập dữ liệu nguồn
+│   ├── main.py
+│   └── README.md
 ├── requirements.txt
 └── README.md
 ```

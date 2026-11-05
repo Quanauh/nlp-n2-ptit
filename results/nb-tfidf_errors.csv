@@ -1,59 +1,68 @@
 ﻿review,label,pred,score
 ukm,1,0,0.5
-Okok,1,0,0.5
-Sản phẩm ư,0,1,0.8956418786284193
-Mọi thứ rất tốt,1,0,0.010851961116515416
-Tủ lạnh sài rất tốt nhe,1,0,0.3770113826141901
-tôi thấy tủ lạnh này rất tốt,1,0,0.29849548198554254
-10,1,0,0.48505387022239244
-"Kiếm tiền online tại nhà 1tr/ngày, nhấn giare-999.online/2d7y2w",1,0,0.13148768390407717
-Tam thời Sài tuyệt vời lắm luôn,0,1,0.6822081565089976
-"Sản phẩm dùng tốt, mọi thứ sài ok",1,0,0.1662614412249713
-Tủ lạnh xữ dụng rất tốt,0,1,0.953194584383654
-Very good,0,1,0.9488880523250064
+Ok.chất lượng tốt,1,0,0.00988888476066821
+Sản phẩm ổn,1,0,0.03837458696218034
+"Tuyển CTV bán hàng online thu nhập cao, liên hệ 0562 056 174",1,0,0.2203060552643384
+hàng ok,1,0,0.03430939078209148
+Mmmmmm,1,0,0.0033307124954431973
+👌,1,0,0.5
+Ngon,1,0,0.34932074125157325
+Ddddd,1,0,0.028863718664625337
+Hàng ok ạ,1,0,0.1786756377082081
+asdf,1,0,0.5
+tủ lạnh chất lượng tốt,1,0,0.07204186937188801
+Ccccccccc,1,0,0.0077522519018417705
+xx,1,0,0.5
+Sài oce,0,1,0.7417786696830456
+hàng ngon giá tốt,0,1,0.7108187709392052
+sử dụng tốt diệt khuẩn tốt,0,1,0.9657203581022336
+Fffff,1,0,0.5
+Nhan vien dể thuong,0,1,0.9311483810484794
 Great,1,0,0.5
-😊,1,0,0.5
-Mới thì dùng cũng ổn,1,0,0.32161688799377725
-"Sản phẩm sử dụng bình thường , ổn , không có điểm chê gì",0,1,0.7876223070912705
-Đến 22/5/2023 thì vẫn xài bình thường,0,1,0.5138901644850653
-Ok sản phẩm tốt với giá nay,1,0,0.421075638669334
-Nhan vien giao hàng rất tốt cam ơn a nhan vien do nhieu,0,1,0.9705717491158165
-Sự dụng tốt,1,0,0.36811659032117433
-may loc nuoc dung on,0,1,0.9481297671663811
-ppp,1,0,0.044502569551009515
-Liên hệ để kiểm tra tính chất nước trước và sau khi dùng máy lọc nước.Tại sao phải đã tốn tiền mua sản phẩm lọc mà không biết được tính chất nước an toàn để sử dụng.Hà cớ chi KH phải tốn tiền đem mẫu nước đi phân tích hả trời036 3590 059,1,0,3.110164718809682e-06
-Sử dụng ổn,1,0,0.2576114384959173
-Lllllllll,1,0,0.5
-hihi,1,0,0.12044585012005576
-Nồi cơm đan nấu tôt,0,1,0.7849816442111973
-"Nhân viên tư vấn nhiệt tình. Giao hàng nhanh, nồi đẹp",1,0,0.20802296444856208
-Chất lượng tốt lắm nên mua👍,0,1,0.923009010784505
-Hình ảnh mang tính chất nhận xu,1,0,0.27188342879812
-Sp tốt. Cơm ngon,1,0,0.47829497892335576
-noi com dung on,0,1,0.8977132653889388
-Noi com nau rat ung y gdinh,0,1,0.9622524942935193
-Máy lọc chất lượng,0,1,0.9532259285117644
-Xài ok nha mọi người,0,1,0.5759247060627598
-"Giá rẻ, xài tốt.",0,1,0.9911635174399512
-sản phẩm tốt rất okay mình dùng ưng bụng lắm,0,1,0.930643580826647
-Máy sử dụng ồn,0,1,0.5080842581658307
-Chung roi rat hai long voi San pham sau 1 tuan giat quan ao. Mau sac trang nha sang trong va cach su dung de dang. Cam on DMX.,0,1,0.796358365491841
-San pham truoc mat la tot khong biet sau nay nhu the nao,0,1,0.6468726451312388
-May giat gan 3tieng xa nhay gio tum lum,0,1,0.6847026130038412
-Sản phẩm tốt lắm nhâb viên nhiệt tình,0,1,0.9609219375029848
-Sp tốt nv giao hàng nhiệt tình. Cảm ơn dienmayxanh,0,1,0.8646436977394807
-Rất tốt?,1,0,0.23360331980423832
-Sqn pham tot,0,1,0.9995659430113013
-Cảm thấy giăt sạch máy hoạt động bình thường ok,0,1,0.5222359893854859
-Quá toẹt vời. Máy làm lạnh ok .,0,1,0.7487843229276082
-sao 20ngay su dung thay êm,0,1,0.9913110270376367
-Máy lạnh nhanh,0,1,0.6682947743974313
-"Toàn bộ quá trình mua hàng và cách bảo hành của cửa hàng, mọi người đọc và rút kinh nghiệm. Ngày 08/5/2024 tôi nhận 1 chiếc máy lạnh Midea MAFA 09CDN8 theo đơn đặt từ ngày 03/5, gía 6 triệu 0 trăm 90 nghìn VND ,sau lắp đặt, tôi sử dụng từ 14h17h cùng ngày, tôi tắt máy, đến 19h sử dụng lại máy không mát, tôi đợi đến 21h máy không làm lạnh được, vì quá giờ gọi điện nên sáng 09/5 tôi gọi cho cửa hàng. Sáng 09/5 tôi gọi lại qua số điện thoại 1900 232 465, nhân viên nghe máy hẹn tối 22h 10/5 mới có thợ đến sửa, tôi không đồng ý, vì máy tôi lắp đặt và sử dụng chưa đến 12 giờ đã hư hỏng, tôi yêu cầu được sửa chữa ngay. Khoảng 10h nhân viên liên hệ lại sẽ có thợ đến sửa chữa lúc 1314h cùng ngày, tôi đồng ý. 11h30 ngày 09/5 thợ sửa chữa đến, là thợ lắp đặt máy luôn, thợ không có số điện thoại của khách, đứng dưới nhà kêu, tôi được hàng xóm gọi điện thoại mới biết thợ đến.11h3013h 09/5 thợ kiểm tra, báo là do vặn ốc không chặt, quên vặn bằng mỏ lết, thợ vặn lại, sửa chữa thì máy làm lạnh được.13h30 17h30 ngay 09/5 máy làm lạnh tốt, sau đó tôi tắt máy đi ra ngoài.22h30 09/5 tôi mở máy lại và không sử dụng được, máy chạy khoảng 45 phút tự tắt, màn hình nhấp nháy chữ đọc không rõ. Sáng 10/5 lúc 5h tôi có mở máy lại, check kĩ vấn đề có phải do nguồn điện nhà tôi yếu hay không, nhưng đúng 45 phút, máy tự tắt, không lạnh, báo lỗi giống tối 09/5.8h 10/5 gọi điện khiếu nại và bảo hành, nhân viên hẹn 12/5 mới có thợ đến được.khoảng 12h10 ngày 12/5, nhân viên sửa chữa ĐMX đến kiểm tra lại máy lạnh của tôi, anh kiểm tra và hỏi hệ thống đây đồng của ĐMX hay của khách, anh hỏi nhân viên cũ có kiểm tra chỗ dàn lạnh không Cụ thể là vị trí nối ốc lỏng mà mail trước tôi trình bày. Sau khi kiểm tra khoảng 30 phút, điện thoại của tôi nhận được cuộc nhá máy từ số 0833 181 065 khoảng 12h40, số này trước đó tôi đã chủ động liên hệ để hỏi khi nào nhân viên sửa chữa ĐMX đến Trong buổi sáng, số này gọi cho tôi 2 lần, 1 lần nhá máy lúc 10h25, lần sau 10h26 tôi bắt máy nhưng không trả lời, đến 12h tôi chủ động gọi thì nhân viên CSKH nói là nhân viên sửa chữa gọi cho tôi để đến nhà xem máy. Nên thấy cuộc gọi nhỡ lúc 12h40 tôi đoán là anh đã xem máy xong, tôi gọi cho người nhà, được báo lại là khả năng hư hỏng do máy, sẽ về báo ĐMX, liên hệ hãng Midea, trước thứ 4 ngày 15/5 nhân viên Midea đến. 11h07 ngày 13/5, tôi chủ động gọi cho ĐMX qua số 1900 232 465 để hỏi tình hình khi nào nhân viên Midea đến xem máy, tôi nhận được câu trả lời là trước 16/5, bên ĐMX sẽ hối bên Midea đến sớm cho khách, vì nhận thấy nhân viên trả lời không khớp khoảng thời gian mà trưa 12/5 tôi nhận được, nên 11h18 tôi chủ động gọi cho Midea qua số 1800 588 863 để tìm hiểu thông tin khi nào có nhân viên đến xem máy. Tôi được thông tin là Midea vừa nhận tin của ĐMX, Midea sẽ gọi cho nhân viên sửa chữa, sẽ liên hệ khách sớm. 12h53 ngày 13/5, nhân viên Midea gọi cho tôi, thông tin thời gian sẽ đến xem máy, tôi đồng ý. 14h03 ngày 13/5, nhân viên Midea đến xem máy, kiểm tra dàn lạnh, ghi nhận do lỗi lắp đặt, dàn nóng khó tiếp cận, tôi nhận 1 biên bản ghi nhận tình trạng máy, anh nhân viên Midea giữ 1 bản về báo lại cho hãng. 14h53 ngày 13/5, tôi chủ động gọi cho ĐMX thông tin tình trạng sau khi Midea kiểm tra, ĐMX báo chưa nhận được thông tin từ Midea, sẽ nhận sớm và xếp đơn của tôi vào ưu tiên để giải quyết. 19h1519h40 ngày 13/5, không nhận được cuộc gọi nào phản hồi về việc sửa chữa máy, tôi gọi cho số bảo hành ĐMX, nhân viên trả lời chưa nhận được biên bản kiểm tra của Midea, tôi tắt máy, gọi cho Midea và họ báo đã gửi biên bản cho ĐMX. Tôi gọi tiếp cho số khiếu nại của ĐMX, nhân viên hướng dẫn tôi gửi biên bản qua App quà tặng vip, các bạn sẽ gửi cho bên thiết bị nhanh chóng giải quyết cho tôi. 12h58 ngày 14/5, tôi tiếp tục chủ động gọi cho số khiếu nại ĐMX, vì tôi vẫn chưa nhận được cuộc gọi hẹn vào xem máy, các bạn lại tra thông tin, và nói đã gửi cho bên thiết bị, hẹn trước 19h liên hệ cho tôi thời gian đến xem máy. 14h32 ngày 14/5, tôi nhận cuộc gọi từ ĐMX hẹn trước 20h cùng ngày nhân viên thiết bị đến xem máy.",1,0,1.3669813156432901e-17
-Ok tốt nha add,0,1,0.9817104985192713
-Ok đoá,0,1,0.8810000668492565
-OkNên dùng giá tốt,0,1,0.8591523934620656
-Sang phẩm tốt,0,1,0.9087030526670488
-Bsnshsbxbdn,1,0,0.5
-OK máy tốt,1,0,0.428450140855721
-Tốt.nv giao Hàng nhiệt tình,0,1,0.6228582163186764
-Máy chạy tốt làm lạnh nhanh hoạt động êm,0,1,0.5527299836843997
+Sấy không khô,0,1,0.7573722656746839
+Aqua dùng tốt,1,0,0.10843575052443943
+Màu tivi ok lắm ạ,0,1,0.790039198218641
+sp tốt đánh giá 5,0,1,0.8595597363529027
+sp đánh giá 5,0,1,0.8192826392259362
+"Sản phẩm sử dụng tốt , OK",0,1,0.9910728104756878
+sản phẩm sử dụng tốt đánh giá 5,0,1,0.9695380857144538
+5 Sản phẩm sử dụng được,0,1,0.930738278171196
+dúng thấy ổn tốt,1,0,0.1392055326033433
+"Dịch vụ tốt, sản phẩm ưng ý",0,1,0.8001522725496358
+"Dùng đc,tốt",1,0,0.3996469838110444
+nhât ok,0,1,0.8783763158224552
+Tốt. Hài lòng,1,0,0.17884410595262135
+Nhan vien giao hàng rất tốt cam ơn a nhan vien do nhieu,0,1,0.9896445741383991
+máy lọc tốt,1,0,0.24595326355034794
+San pham xai tot lam ban oi,0,1,0.9464424956671713
+máy lọc sử dụng êm,0,1,0.954420708741999
+Hàng chính hãng.dùng khá ok,0,1,0.7668994882845901
+Mấy chạy dc,1,0,0.07686462647295944
+Chị xài cảm thấy rất tốt ok,0,1,0.8034424345871749
+Chất lượng tốt,1,0,0.022622405601378213
+Ok hàng đep chất lương,1,0,0.0546357013618343
+"thoat hơi nươc kem nên khi mơ nôi nươc bi rơi hêt xuông cơm lam cơm bi ươt, minh k hai long vơi san phâm nay",0,1,0.5908501067288295
+tốt nhé.,1,0,0.35719961690422697
+Chât lương tôt,1,0,0.01020400642261532
+"Nồi rất đẹp, dùng tốt",1,0,0.21171966175349644
+Rất tốt. Tôi rất hài lòng,0,1,0.8495063416256285
+"Hài lòng, nhân viên giao hàng nhiệt tình, sản phẩm ok",1,0,0.2726788163784679
+Dùng rất ok. Thanks,0,1,0.5692895320458667
+Hàng đẹp chaât lượng ok,0,1,0.9810945801023934
+toi rat hai long noi com dien nuong gai elites 1.8 lit NCG1805,0,1,0.9705811171584161
+Sản phẩm sử dụng thấy tốt... Rất hài lòng...,0,1,0.9707565119625597
+"Nồi cơm điện giá rẻ, sử dụng tốt.",0,1,0.8012483327235922
+Cơm ngon và rất ok,1,0,0.007070947817147965
+Chất lượng rất tốt,1,0,0.12110715782964306
+❤️,1,0,0.007183004033121229
+Noi com nau rat ung y gdinh,0,1,0.5435466644576654
+Máy lọc chất lượng,0,1,0.9154985425496251
+Hàng sài ổn lọc tốt,1,0,0.04461668747770886
+Chất lương tốt,1,0,0.003499152024884507
+sản phẩm chất lượng tốt,1,0,0.0057296681238485
+máy giặt chạy tốt,1,0,0.3925128396744363
+Xinh dep,0,1,0.9735677901312176
+Sài tốt lắm tuyên truyền vời ạ,0,1,0.8508459622941009
+Máy giặt khá ok,1,0,0.34606059270400513
+tu khi lap toi hien tai thay on ap,0,1,0.9975999586644023
+Máy lạnh sử dụng rất tốt...,0,1,0.9744300122166207

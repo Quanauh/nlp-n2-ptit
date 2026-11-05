@@ -139,3 +139,60 @@ Kết quả kiểm thử trên tập Test (964 mẫu, gồm 758 câu Ham và 206
 4. **Đánh giá trên tập dữ liệu lệch lớp (Imbalanced Data)**:
    - Tỷ lệ Spam trong tập dữ liệu là ~21.4%.
    - Do dữ liệu mất cân bằng, chỉ số **F1-score lớp Spam** và **PR-AUC** được ưu tiên làm tiêu chí đánh giá cốt lõi thay vì chỉ dựa vào Accuracy thông thường.
+
+## ✅ Chạy dự án bằng Docker
+
+### Bước 1 — Kiểm tra Docker đã cài chưa
+
+docker --version
+
+### Bước 2 — Tạo file Dockerfile trong thư mục gốc
+
+cat > Dockerfile << 'EOF'
+FROM python:3.11-slim
+
+WORKDIR /app
+
+COPY requirements.txt .
+RUN pip install --upgrade pip && \
+    pip install -r requirements.txt && \
+    pip install matplotlib scipy joblib
+
+COPY . .
+
+CMD ["bash"]
+EOF
+
+### Bước 3 — Build image
+
+docker build -t nlp-n2-ptit .
+
+### Bước 4 — Chạy container (mount thư mục để lưu kết quả ra ngoài)
+
+docker run -it --rm \
+  -v $(pwd)/data:/app/data \
+  -v $(pwd)/results:/app/results \
+  -v $(pwd)/feature_extraction/features:/app/feature_extraction/features \
+  nlp-n2-ptit bash
+
+———
+
+### Bước 5 — Trong container, chạy lần lượt:
+
+# Tiền xử lý
+python preprocess/preprocess.py --input data/raw/reviews_spam_ham_filtered_augmented.csv
+
+# Trích chọn đặc trưng
+python feature_extraction/bow.py
+python feature_extraction/tfidf.py
+python feature_extraction/WE.py
+
+# Huấn luyện mô hình
+python model/nb-bow.py
+python model/nb-tfidf.py
+python model/nb-we.py
+python model/svm-bow.py
+python model/svm-tfidf.py
+python model/svm-we.py
+
+———

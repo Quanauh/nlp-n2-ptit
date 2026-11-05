@@ -26,8 +26,8 @@ import numpy as np
 import pandas as pd
 from sklearn.feature_extraction.text import TfidfVectorizer
 
-DATA_PATH = "E:\Machine Learning\BTL1\BTL1\data\processed\processed.csv"
-FEAT_DIR = "features"
+DATA_PATH = os.path.join(os.path.dirname(__file__), "..", "data", "processed", "processed.csv")
+FEAT_DIR = os.path.join(os.path.dirname(__file__), "features")
 
 NGRAM_MAX = 2
 MIN_DF = 2

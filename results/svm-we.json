@@ -1,25 +1,25 @@
 {
   "model": "svm-we",
   "feature": "we",
-  "accuracy": 0.9564315352697096,
-  "precision_spam": 0.9141414141414141,
-  "recall_spam": 0.8786407766990292,
-  "f1_spam": 0.8960396039603961,
-  "f1_macro": 0.9342402744211429,
-  "roc_auc": 0.9778607474959653,
-  "pr_auc": 0.9340054470645512,
-  "cv_f1_spam": 0.9000783215204284,
-  "train_time_s": 0.17226690000097733,
-  "predict_time_s": 0.0755749999989348,
-  "best_params": "{\"svm__C\": 10.0, \"svm__class_weight\": null, \"svm__gamma\": \"scale\"}",
+  "accuracy": 0.9585062240663901,
+  "precision_spam": 0.8685714285714285,
+  "recall_spam": 0.8994082840236687,
+  "f1_spam": 0.8837209302325582,
+  "f1_macro": 0.9292342024900164,
+  "roc_auc": 0.9858732462506048,
+  "pr_auc": 0.9264508854420739,
+  "cv_f1_spam": 0.8755109923644573,
+  "train_time_s": 0.19880695400024706,
+  "predict_time_s": 0.05707982100011577,
+  "best_params": "{\"svm__C\": 10.0, \"svm__class_weight\": \"balanced\", \"svm__gamma\": \"scale\"}",
   "confusion_matrix": [
     [
-      741,
-      17
+      772,
+      23
     ],
     [
-      25,
-      181
+      17,
+      152
     ]
   ]
 }

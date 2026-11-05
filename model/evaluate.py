@@ -36,7 +36,7 @@ from sklearn.metrics import (
 from sklearn.model_selection import GridSearchCV, StratifiedKFold
 
 ROOT = Path(__file__).resolve().parents[1]
-FEAT_DIR = ROOT / "2_trich_chon_dac_trung" /"features"
+FEAT_DIR = ROOT / "feature_extraction" / "features"
 RESULT_DIR = ROOT / "results"
 SEED = 42
 

@@ -33,8 +33,8 @@ import numpy as np
 import pandas as pd
 from gensim.models import Word2Vec
 
-DATA_PATH = "E:\Machine Learning\BTL1\BTL1\data\processed\processed.csv"
-FEAT_DIR = "features"
+DATA_PATH = os.path.join(os.path.dirname(__file__), "..", "data", "processed", "processed.csv")
+FEAT_DIR = os.path.join(os.path.dirname(__file__), "features")
 
 DIM = 100          # số chiều của mỗi vector từ
 WINDOW = 5         # cửa sổ ngữ cảnh: xét 5 từ bên trái và 5 từ bên phải

@@ -1,0 +1,25 @@
+{
+  "model": "svm-we",
+  "feature": "we",
+  "accuracy": 0.9564315352697096,
+  "precision_spam": 0.9141414141414141,
+  "recall_spam": 0.8786407766990292,
+  "f1_spam": 0.8960396039603961,
+  "f1_macro": 0.9342402744211429,
+  "roc_auc": 0.9778607474959653,
+  "pr_auc": 0.9340054470645512,
+  "cv_f1_spam": 0.9000783215204284,
+  "train_time_s": 0.17226690000097733,
+  "predict_time_s": 0.0755749999989348,
+  "best_params": "{\"svm__C\": 10.0, \"svm__class_weight\": null, \"svm__gamma\": \"scale\"}",
+  "confusion_matrix": [
+    [
+      741,
+      17
+    ],
+    [
+      25,
+      181
+    ]
+  ]
+}

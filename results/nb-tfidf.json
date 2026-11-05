@@ -1,0 +1,25 @@
+{
+  "model": "nb-tfidf",
+  "feature": "tfidf",
+  "accuracy": 0.9398340248962656,
+  "precision_spam": 0.8457943925233645,
+  "recall_spam": 0.8786407766990292,
+  "f1_spam": 0.861904761904762,
+  "f1_macro": 0.9117216117216118,
+  "roc_auc": 0.9747226989778928,
+  "pr_auc": 0.9211575870152694,
+  "cv_f1_spam": 0.8696630899852332,
+  "train_time_s": 0.001760300001478754,
+  "predict_time_s": 0.00036410000029718503,
+  "best_params": "{\"nb\": \"ComplementNB()\", \"nb__alpha\": 0.01}",
+  "confusion_matrix": [
+    [
+      725,
+      33
+    ],
+    [
+      25,
+      181
+    ]
+  ]
+}

@@ -12,9 +12,7 @@ nlp-n2-ptit/
 │   ├── raw/                                        # Dữ liệu thu thập chưa gán nhãn
 │   │   └── commentdienmayxanh.csv                  # Đánh giá nguồn từ Điện Máy Xanh
 │   ├── labeled/                                    # Các bộ dữ liệu đã gán nhãn
-│   │   ├── reviews_spam_ham.csv
-│   │   ├── reviews_spam_ham_chuan.csv
-│   │   └── reviews_spam_ham_filtered_augmented.csv
+│   │   └── reviews_spam_ham.csv
 │   └── processed/                                  # Dữ liệu sau tiền xử lý
 │       └── processed.csv                           # Đã làm sạch, lọc trùng, gắn nhãn train/test
 ├── preprocess/
@@ -78,7 +76,7 @@ Chạy các lệnh bên dưới từ thư mục gốc của dự án (`nlp-n2-pt
 Lệnh này làm sạch văn bản, lọc câu trùng và tạo một lần chia Train/Test dùng chung cho BoW, TF-IDF và Word2Vec:
 
 ```bash
-python preprocess/preprocess.py --input data/labeled/reviews_spam_ham_filtered_augmented.csv
+python preprocess/preprocess.py --input data/labeled/reviews_spam_ham.csv
 ```
 
 Đầu ra: `data/processed/processed.csv`. Có thể xem nhanh dữ liệu đã chia bằng:
@@ -223,7 +221,7 @@ docker run -it --rm \
 ### Bước 4 — Trong container, chạy lần lượt:
 
 # Tiền xử lý
-python preprocess/preprocess.py --input data/labeled/reviews_spam_ham_filtered_augmented.csv
+python preprocess/preprocess.py --input data/labeled/reviews_spam_ham.csv
 
 # Trích chọn đặc trưng
 python feature_extraction/bow.py

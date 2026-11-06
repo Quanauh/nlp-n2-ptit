@@ -13,11 +13,6 @@ Giống BoW nhưng mỗi số đếm được nhân thêm trọng số IDF:
 
 Vectorizer chỉ fit trên TRAIN (IDF tính từ train), rồi transform TEST.
 
-Đầu vào : data/processed/processed.csv
-Đầu ra  : features/tfidf.pkl             (X_train, X_test, y_train, y_test, feature_names)
-          features/tfidf_vectorizer.pkl
-
-Chạy (đứng trong thư mục BTL1):  python 2_trich_chon_dac_trung/tfidf.py
 """
 import os
 

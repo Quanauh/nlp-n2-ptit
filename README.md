@@ -73,46 +73,100 @@ Danh sách thư viện chính:
 
 Chạy các lệnh bên dưới từ thư mục gốc của dự án (`nlp-n2-ptit/`):
 
-### Bước 1: Tiền xử lý dữ liệu và chia tập Train / Test
+### Bước 1: Tiền xử lý dữ liệu
+
+Lệnh này làm sạch văn bản, lọc câu trùng và tạo một lần chia Train/Test dùng chung cho BoW, TF-IDF và Word2Vec:
+
 ```bash
 python preprocess/preprocess.py --input data/labeled/reviews_spam_ham_filtered_augmented.csv
 ```
-- **Đầu vào**: File đã gán nhãn trong `data/labeled/`.
-- **Đầu ra**: `data/processed/processed.csv` (gồm 3.856 mẫu train và 964 mẫu test, phân tầng theo nhãn).
 
-### Bước 2: Trích chọn đặc trưng
+Đầu ra: `data/processed/processed.csv`. Có thể xem nhanh dữ liệu đã chia bằng:
+
 ```bash
-# 1. Bag-of-Words
+python -c "import pandas as pd; d=pd.read_csv('data/processed/processed.csv'); print(d.groupby(['split','label']).size()); print(d[['review','clean_text','label','split']].head())"
+```
+
+### Bước 2: Tạo đặc trưng
+
+Chạy cả ba lệnh để sẵn sàng demo đủ sáu tổ hợp Naive Bayes/SVM với BoW, TF-IDF và Word2Vec:
+
+```bash
+# Bag-of-Words: tạo ma trận đếm và vectorizer
 python feature_extraction/bow.py
 
-# 2. TF-IDF
+# TF-IDF: tạo ma trận trọng số và vectorizer
 python feature_extraction/tfidf.py
 
-# 3. Word Embedding (Word2Vec)
+# Word Embedding: huấn luyện Word2Vec trên train và tạo vector câu
 python feature_extraction/WE.py
 ```
-- **Đầu ra**: Các file đặc trưng `.pkl` và vectorizer / model tương ứng được lưu trong thư mục `feature_extraction/features/`.
 
-### Bước 3: Huấn luyện và đánh giá mô hình
-Có thể chạy từng mô hình riêng lẻ:
+Đầu ra được lưu trong `feature_extraction/features/`. Nếu chỉ demo một mô hình, chỉ cần chạy bước tạo đặc trưng tương ứng trước đó.
+
+### Bước 3: Demo từng mô hình
+
+Mỗi lệnh dưới đây dò siêu tham số bằng 5-fold cross-validation trên tập train, sau đó đánh giá trên tập test. Các lệnh có thể chạy độc lập sau khi đã tạo đặc trưng tương ứng:
 
 ```bash
-# Mô hình Naive Bayes
+# Naive Bayes + BoW
 python model/nb-bow.py
+
+# Naive Bayes + TF-IDF
 python model/nb-tfidf.py
+
+# Naive Bayes + Word Embedding (Word2Vec)
 python model/nb-we.py
 
-# Mô hình SVM
+# SVM tuyến tính + BoW
 python model/svm-bow.py
+
+# SVM tuyến tính + TF-IDF
 python model/svm-tfidf.py
+
+# SVM RBF + Word Embedding (Word2Vec)
 python model/svm-we.py
 ```
 
-Mỗi mô hình khi chạy sẽ:
-1. Dò tìm siêu tham số tối ưu bằng **5-Fold Stratified Cross-Validation** trên tập Train (tiêu chí tối ưu là F1-score của lớp Spam).
-2. Huấn luyện lại trên toàn bộ tập Train và kiểm thử trên tập Test (964 mẫu).
-3. In kết quả chi tiết: Accuracy, Precision, Recall, F1-score (Spam), Macro F1, ROC-AUC, PR-AUC, Confusion Matrix, Classification Report và các ví dụ đoán sai.
-4. Tự động lưu checkpoint, ma trận nhầm lẫn dạng ảnh, phân tích lỗi và cập nhật bảng so sánh tổng hợp vào `results/summary.csv`.
+Mỗi lần chạy sẽ in các chỉ số, ma trận nhầm lẫn và ví dụ dự đoán sai; đồng thời cập nhật `results/summary.csv` và lưu mô hình, JSON, ảnh ma trận nhầm lẫn, CSV lỗi vào `results/`.
+
+### Bước 4: Demo FastText
+
+FastText là pipeline độc lập, tự đọc và chia dữ liệu từ `data/labeled/reviews_spam_ham.csv`; không cần chạy trước các bước tiền xử lý/trích đặc trưng ở trên. Cài dependency riêng và chạy từ thư mục gốc:
+
+```bash
+pip install -r FastText_Performance/requirements.txt
+python FastText_Performance/main.py
+```
+
+Có thể truyền một CSV khác nếu file có hai cột `review` và `label` (0 = ham, 1 = spam):
+
+```bash
+python FastText_Performance/main.py data/labeled/reviews_spam_ham.csv
+```
+
+FastText in các chỉ số đánh giá ra terminal, nhưng không lưu checkpoint hoặc kết quả vào `results/`.
+
+### Chạy toàn bộ demo lần lượt
+
+Sau khi cài dependencies, có thể copy/chạy nguyên khối dưới đây từ thư mục gốc:
+
+```bash
+python preprocess/preprocess.py --input data/labeled/reviews_spam_ham_filtered_augmented.csv
+python feature_extraction/bow.py
+python feature_extraction/tfidf.py
+python feature_extraction/WE.py
+python model/nb-bow.py
+python model/nb-tfidf.py
+python model/nb-we.py
+python model/svm-bow.py
+python model/svm-tfidf.py
+python model/svm-we.py
+pip install -r FastText_Performance/requirements.txt
+python FastText_Performance/main.py
+```
+
+Các lệnh huấn luyện có thể mất thời gian do dò siêu tham số; để demo riêng từng mô hình, chỉ chạy script đặc trưng tương ứng và script mô hình tương ứng.
 
 ---
 
@@ -152,28 +206,11 @@ Kết quả kiểm thử trên tập Test (964 mẫu, gồm 758 câu Ham và 206
 
 docker --version
 
-### Bước 2 — Tạo file Dockerfile trong thư mục gốc
-
-cat > Dockerfile << 'EOF'
-FROM python:3.11-slim
-
-WORKDIR /app
-
-COPY requirements.txt .
-RUN pip install --upgrade pip && \
-    pip install -r requirements.txt && \
-    pip install matplotlib scipy joblib
-
-COPY . .
-
-CMD ["bash"]
-EOF
-
-### Bước 3 — Build image
+### Bước 2 — Build image từ Dockerfile có sẵn
 
 docker build -t nlp-n2-ptit .
 
-### Bước 4 — Chạy container (mount thư mục để lưu kết quả ra ngoài)
+### Bước 3 — Chạy container (mount thư mục để lưu kết quả ra ngoài)
 
 docker run -it --rm \
   -v $(pwd)/data:/app/data \
@@ -183,7 +220,7 @@ docker run -it --rm \
 
 ———
 
-### Bước 5 — Trong container, chạy lần lượt:
+### Bước 4 — Trong container, chạy lần lượt:
 
 # Tiền xử lý
 python preprocess/preprocess.py --input data/labeled/reviews_spam_ham_filtered_augmented.csv
@@ -200,5 +237,9 @@ python model/nb-we.py
 python model/svm-bow.py
 python model/svm-tfidf.py
 python model/svm-we.py
+
+# FastText (cài dependency riêng)
+pip install -r FastText_Performance/requirements.txt
+python FastText_Performance/main.py
 
 ———

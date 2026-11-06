@@ -1,6 +1,6 @@
 # Thu thập đánh giá Điện Máy Xanh
 
-Thư mục này chứa mã thu thập và tệp CSV nguồn `data/raw/commentdienmayxanh.csv`. CSV có 10.238 đánh giá với các cột `phan_loai`, `san_pham`, `nguoi_danh_gia`, `so_sao`, `noi_dung`, `link`. Bộ dữ liệu đã gán nhãn tương ứng đang có ở `data/reviews_spam_ham.csv`; PR này không thay đổi dữ liệu huấn luyện, mô hình hoặc kết quả đánh giá của nhóm.
+Thư mục này chứa mã thu thập và tệp CSV nguồn `data/raw/commentdienmayxanh.csv`. CSV có 10.238 đánh giá với các cột `phan_loai`, `san_pham`, `nguoi_danh_gia`, `so_sao`, `noi_dung`, `link`. Bộ dữ liệu đã gán nhãn tương ứng nằm ở `data/labeled/reviews_spam_ham.csv`.
 
 ## Chạy crawler
 

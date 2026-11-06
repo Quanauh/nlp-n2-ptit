@@ -9,8 +9,10 @@ Dự án xây dựng pipeline máy học phân loại bình luận sản phẩm 
 ```text
 nlp-n2-ptit/
 ├── data/
-│   ├── raw/                                        # Dữ liệu gốc
-│   │   ├── commentdienmayxanh.csv                  # Đánh giá nguồn từ Điện Máy Xanh
+│   ├── raw/                                        # Dữ liệu thu thập chưa gán nhãn
+│   │   └── commentdienmayxanh.csv                  # Đánh giá nguồn từ Điện Máy Xanh
+│   ├── labeled/                                    # Các bộ dữ liệu đã gán nhãn
+│   │   ├── reviews_spam_ham.csv
 │   │   ├── reviews_spam_ham_chuan.csv
 │   │   └── reviews_spam_ham_filtered_augmented.csv
 │   └── processed/                                  # Dữ liệu sau tiền xử lý
@@ -73,9 +75,9 @@ Chạy các lệnh bên dưới từ thư mục gốc của dự án (`nlp-n2-pt
 
 ### Bước 1: Tiền xử lý dữ liệu và chia tập Train / Test
 ```bash
-python preprocess/preprocess.py --input data/raw/reviews_spam_ham_filtered_augmented.csv
+python preprocess/preprocess.py --input data/labeled/reviews_spam_ham_filtered_augmented.csv
 ```
-- **Đầu vào**: File dữ liệu gốc trong `data/raw/`.
+- **Đầu vào**: File đã gán nhãn trong `data/labeled/`.
 - **Đầu ra**: `data/processed/processed.csv` (gồm 3.856 mẫu train và 964 mẫu test, phân tầng theo nhãn).
 
 ### Bước 2: Trích chọn đặc trưng
@@ -184,7 +186,7 @@ docker run -it --rm \
 ### Bước 5 — Trong container, chạy lần lượt:
 
 # Tiền xử lý
-python preprocess/preprocess.py --input data/raw/reviews_spam_ham_filtered_augmented.csv
+python preprocess/preprocess.py --input data/labeled/reviews_spam_ham_filtered_augmented.csv
 
 # Trích chọn đặc trưng
 python feature_extraction/bow.py

@@ -12,9 +12,7 @@ nlp-n2-ptit/
 │   ├── raw/                                        # Dữ liệu thu thập chưa gán nhãn
 │   │   └── commentdienmayxanh.csv                  # Đánh giá nguồn từ Điện Máy Xanh
 │   ├── labeled/                                    # Các bộ dữ liệu đã gán nhãn
-│   │   ├── reviews_spam_ham.csv
-│   │   ├── reviews_spam_ham_chuan.csv
-│   │   └── reviews_spam_ham_filtered_augmented.csv
+│   │   └── reviews_spam_ham.csv
 │   └── processed/                                  # Dữ liệu sau tiền xử lý
 │       └── processed.csv                           # Đã làm sạch, lọc trùng, gắn nhãn train/test
 ├── preprocess/
@@ -75,10 +73,10 @@ Chạy các lệnh bên dưới từ thư mục gốc của dự án (`nlp-n2-pt
 
 ### Bước 1: Tiền xử lý dữ liệu và chia tập Train / Test
 ```bash
-python preprocess/preprocess.py --input data/labeled/reviews_spam_ham_filtered_augmented.csv
+python preprocess/preprocess.py --input data/labeled/reviews_spam_ham.csv
 ```
 - **Đầu vào**: File đã gán nhãn trong `data/labeled/`.
-- **Đầu ra**: `data/processed/processed.csv` (gồm 3.856 mẫu train và 964 mẫu test, phân tầng theo nhãn).
+- **Đầu ra**: `data/processed/processed.csv` (chia train/test 80/20, phân tầng theo nhãn). Các tệp kết quả huấn luyện đang lưu trong repo được tạo từ bộ dữ liệu trước đây; chạy lại toàn bộ pipeline để cập nhật kết quả theo tệp nhãn duy nhất này.
 
 ### Bước 2: Trích chọn đặc trưng
 ```bash
@@ -186,7 +184,7 @@ docker run -it --rm \
 ### Bước 5 — Trong container, chạy lần lượt:
 
 # Tiền xử lý
-python preprocess/preprocess.py --input data/labeled/reviews_spam_ham_filtered_augmented.csv
+python preprocess/preprocess.py --input data/labeled/reviews_spam_ham.csv
 
 # Trích chọn đặc trưng
 python feature_extraction/bow.py

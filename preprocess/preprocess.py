@@ -2,7 +2,7 @@
 BƯỚC 1 — TIỀN XỬ LÍ DỮ LIỆU
 ===========================
 
-Đầu vào : data/labeled/reviews_spam_ham_filtered_augmented.csv
+Đầu vào : data/labeled/reviews_spam_ham.csv
 Đầu ra  : data/processed/processed.csv
           (các cột: category, product, review, rating, label, clean_text, split)
 
@@ -32,7 +32,7 @@ import pandas as pd
 from sklearn.model_selection import train_test_split
 
 ROOT = Path(__file__).resolve().parents[1]
-RAW_PATH = ROOT / "data" / "labeled" / "reviews_spam_ham_filtered_augmented.csv"
+RAW_PATH = ROOT / "data" / "labeled" / "reviews_spam_ham.csv"
 OUT_PATH = ROOT / "data" / "processed" / "processed.csv"
 
 # ---------------------------------------------------------------------------

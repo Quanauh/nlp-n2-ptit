@@ -2,7 +2,7 @@
 BƯỚC 1 — TIỀN XỬ LÍ DỮ LIỆU
 ===========================
 
-Đầu vào : data/raw/reviews_spam_ham_filtered_augmented.csv
+Đầu vào : data/labeled/reviews_spam_ham_filtered_augmented.csv
 Đầu ra  : data/processed/processed.csv
           (các cột: category, product, review, rating, label, clean_text, split)
 
@@ -20,7 +20,7 @@ Vì sao phải bỏ trùng TRƯỚC khi chia?
 
 Nhãn: label = 1 -> spam, label = 0 -> ham.
 
-Chạy:  python 1_tien_xu_li/preprocess.py
+Chạy:  python preprocess/preprocess.py
 """
 
 import argparse
@@ -31,16 +31,14 @@ from pathlib import Path
 import pandas as pd
 from sklearn.model_selection import train_test_split
 
-ROOT = Path(__file__).resolve().parents[1]          # thư mục BTL1/
-RAW_PATH = ROOT / r"E:\Machine Learning\BTL1\BTL1\data\raw\reviews_spam_ham_chuan.csv"
+ROOT = Path(__file__).resolve().parents[1]
+RAW_PATH = ROOT / "data" / "labeled" / "reviews_spam_ham_filtered_augmented.csv"
 OUT_PATH = ROOT / "data" / "processed" / "processed.csv"
 
 # ---------------------------------------------------------------------------
 # Làm sạch văn bản
 # ---------------------------------------------------------------------------
 
-# import pandas as pd
-# df = pd.read_csv(r"E:\Machine Learning\BTL1\BTL1\data\raw\reviews_spam_ham_filtered_augmented.csv")
 # Teencode / viết tắt hay gặp trong bình luận thương mại điện tử
 TEENCODE = {
     "ko": "không", "k": "không", "kh": "không", "khong": "không", "hok": "không",

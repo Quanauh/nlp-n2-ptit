@@ -18,7 +18,7 @@ def main():
     parser = argparse.ArgumentParser(description="Đánh giá FastText spam/ham")
     parser.add_argument(
         "csv", nargs="?", type=Path,
-        default=Path(__file__).parent / "reviews_spam_ham.csv",
+        default=Path(__file__).resolve().parents[1] / "data" / "labeled" / "reviews_spam_ham.csv",
     )
     args = parser.parse_args()
 

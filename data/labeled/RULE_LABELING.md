@@ -4,7 +4,6 @@
 
 - **Gán nhãn theo mục đích của review, không theo cảm xúc.** Chê sản phẩm, chê dịch vụ, văn phong kém đều **không** phải spam.
 - **Xét cả ngữ cảnh**: sản phẩm đang được review, số sao, thông tin người dùng (nếu có). Không chỉ đọc mỗi câu chữ.
-- **Khi phân vân giữa hai nhãn**, áp dụng thứ tự ưu tiên ở mục 6 và đánh dấu `UNSURE`, không đoán bừa.
 - **Một review chỉ có một nhãn.** Nếu thỏa nhiều rule, lấy nhãn theo độ ưu tiên.
 
 ## 2. Định nghĩa nhãn
@@ -13,7 +12,6 @@
 |---|---|
 | **HAM (0)** | Review thật, phản ánh trải nghiệm/ý kiến về sản phẩm, dịch vụ mua tại Điện máy xanh |
 | **SPAM (1)** | Review không nhằm đánh giá sản phẩm, hoặc là nội dung quảng cáo, giả mạo, lặp, phá hoại |
-| **UNSURE (2)** | Không đủ thông tin để quyết định, chuyển người duyệt thứ hai |
 
 ## 3. Rule gắn nhãn SPAM
 
@@ -74,22 +72,22 @@
 | Review chỉ có emoji/ký tự ngắn ("👍", "ok") | HAM | Ngắn không đồng nghĩa spam |
 | Review ngắn phổ biến lặp nhiều lần do nhiều người thật | HAM | Xem H3, ưu tiên ngữ cảnh |
 | Khen quá nhiều, hoa mỹ nhưng có chi tiết thật | HAM | Có nội dung kiểm chứng được |
-| Chê nhưng có SĐT cá nhân để "ai bị giống mình liên hệ" | UNSURE → xem xét theo ngữ cảnh | Có thể là thật, có thể dẫn dắt |
+| Chê nhưng có SĐT cá nhân để "ai bị giống mình liên hệ" | xem xét theo ngữ cảnh | Có thể là thật, có thể dẫn dắt |
 | So sánh giá với cửa hàng khác kèm tên shop | HAM nếu khách quan; SPAM nếu có SĐT/link dẫn dắt | Phân biệt theo mục đích |
 | Nội dung đúng sản phẩm nhưng copy từ trang khác | SPAM (B4) nếu rõ ràng sao chép | |
 | Review nói về dịch vụ chung (giao hàng, nhân viên) không đề cập sản phẩm | HAM | Vẫn thuộc trải nghiệm mua hàng |
-| Review tiếng nước ngoài | HAM nếu đúng nội dung; nếu không hiểu → UNSURE | |
+| Review tiếng nước ngoài | HAM nếu đúng nội dung| |
 | Review sai danh mục nhưng nghi do người dùng nhầm | HAM nếu không có dấu hiệu quảng cáo/lặp | Nhầm lẫn khác với spam |
 | Seeding nhẹ ("Cảm ơn shop, hàng tốt") nhưng nhiều bản giống nhau trên nhiều sản phẩm | SPAM (C1/C2) | Dựa vào mẫu lặp |
-| Review ngắn kèm tên sản phẩm khác | UNSURE | |
+| Review ngắn kèm tên sản phẩm khác | xét ngữ cảnh | |
 
 ## 6. Thứ tự ưu tiên khi xung đột
 
 1. **Nhóm D, A (quảng cáo, lừa đảo, độc hại)** → SPAM ngay, bất kể nội dung còn lại.
 2. **Nhóm C (lặp, bot, seeding)** → SPAM nếu có bằng chứng định lượng (số lần lặp, tần suất).
-3. **Nhóm B (không liên quan)** → SPAM nếu rõ ràng, nếu mơ hồ thì UNSURE.
+3. **Nhóm B (không liên quan)** → SPAM nếu rõ ràng, nếu mơ hồ thì xét theo ngữ cảnh để gắn SPAM/ HAM.
 4. **Có nội dung thực tế (H1, H2, H5, H6)** → HAM, kể cả khi chất lượng viết kém.
-5. **Không đủ thông tin** → UNSURE.
+5. **Không đủ thông tin**
 
 **Nguyên tắc cuối:** *Nghi ngờ nhưng thiếu bằng chứng thì không gán SPAM.* Gán nhầm HAM thành SPAM làm mất review hợp lệ nên nghiêm trọng hơn.
 
@@ -97,9 +95,8 @@
 
 1. Đọc review, xem metadata (số sao, sản phẩm, số lần lặp, user, thời gian).
 2. Kiểm tra theo thứ tự: **A → D → C → B → H**.
-3. Ghi **nhãn + mã rule** (ví dụ `SPAM-A1`, `HAM-H3`) để truy vết và phân tích lỗi.
-4. Nếu không chắc, gán `UNSURE` và ghi chú lý do.
-5. Với cụm trùng lặp: xem vài bản đại diện rồi gán cho cả cụm.
+3. Ghi **nhãn**
+4. Với cụm trùng lặp: xem vài bản đại diện rồi gán cho cả cụm.
 
 ## 8. Kiểm soát chất lượng
 

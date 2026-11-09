@@ -2,26 +2,32 @@
 
 import pandas as pd
 
+FILE_AI    = "data/labeled/1000_sample_dau_may_gan_nhan.csv"  # AI gán nhãn
+FILE_HUMAN = "data/labeled/1000_sample_dau_tu_gan_nhan.csv"   # Người gán nhãn
 
-def compare_ai_human(df: pd.DataFrame) -> pd.DataFrame:
-    """
-    So sánh nhãn AI gán (cột `label_ai`) và nhãn người gán (cột `label`).
-    Thêm cột `match` (1 = khớp, 0 = không khớp).
-    """
-    df = df.copy()
-    df["label_ai"] = df["label_ai"].astype(int)
-    df["label"] = df["label"].astype(int)
-    df["match"] = (df["label_ai"] == df["label"]).astype(int)
+# Đọc 2 file
+df_ai    = pd.read_csv(FILE_AI,    encoding="utf-8-sig")
+df_human = pd.read_csv(FILE_HUMAN, encoding="utf-8-sig")
 
-    n_match = int(df["match"].sum())
-    n_total = len(df)
-    ratio = n_match / n_total if n_total else 0.0
+# Lấy nhãn từ cột label
+label_ai    = df_ai["label"].astype(int)
+label_human = df_human["label"].astype(int)
 
-    print(f"  So sánh nhãn AI gán và nhãn người gán: "
-          f"{n_match:,}/{n_total:,} dòng khớp nhãn ({ratio:.1%})")
-    return df
+# So sánh theo từng dòng (cùng thứ tự)
+match   = label_ai == label_human
+n_total = len(match)
+n_match = match.sum()
+n_diff  = n_total - n_match
+ratio   = n_match / n_total
 
+print(f"Tổng số mẫu        : {n_total}")
+print(f"Số dòng khớp nhãn  : {n_match}")
+print(f"Số dòng không khớp : {n_diff}")
+print(f"Tỉ lệ khớp         : {ratio:.2%}")
 
-if __name__ == "__main__":
-    df = pd.read_csv("data/labeled/3.csv", encoding="utf-8-sig")
-    compare_ai_human(df)
+# In các dòng không khớp
+if n_diff > 0:
+    diff_idx = df_ai[~match].index
+    print(f"\nCác dòng không khớp (index, nội dung, label_ai, label_người):")
+    for i in diff_idx:
+        print(f"  [{i}] label_ai={label_ai[i]}  label_người={label_human[i]}  nội_dung={str(df_ai.loc[i,'noi_dung'])[:80]}")

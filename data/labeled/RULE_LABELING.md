@@ -69,7 +69,7 @@
 
 | Tình huống | Gán nhãn | Lý do |
 |---|---|---|
-| Review chỉ có emoji/ký tự ngắn ("👍", "ok") | HAM | Ngắn không đồng nghĩa spam |
+| Review có từ ngắn ("👍", "ok") | HAM | Ngắn không đồng nghĩa spam |
 | Review ngắn phổ biến lặp nhiều lần do nhiều người thật | HAM | Xem H3, ưu tiên ngữ cảnh |
 | Khen quá nhiều, hoa mỹ nhưng có chi tiết thật | HAM | Có nội dung kiểm chứng được |
 | Chê nhưng có SĐT cá nhân để "ai bị giống mình liên hệ" | xem xét theo ngữ cảnh | Có thể là thật, có thể dẫn dắt |
